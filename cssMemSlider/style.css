@@ -1,18 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #1e884e;
 }
+
 input {
   display: none;
 }
 
 .slider {
+  display: grid;
   max-width: 60rem;
   min-width: 20rem;
+  overflow: hidden;
   background-color: #6d5dbd;
   border: 3px solid black;
+  grid-template:
+    "img img"
+    "text page";
+  grid-template-columns: 1fr 0;
 }
 
 .slider__wrapper {
@@ -38,13 +57,13 @@ input {
 
 .slider__pic-wrapper {
   order: 1;
-
+  grid-area: img;
   height: 70vh;
 }
 
 .slider__text-wrapper {
   order: 3;
-
+  grid-area: text;
   align-items: center;
 }
 
