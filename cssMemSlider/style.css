@@ -4,6 +4,9 @@ body {
   align-items: center;
   background-color: #1e884e;
 }
+input {
+  display: none;
+}
 
 .slider {
   max-width: 60rem;
@@ -69,6 +72,36 @@ body {
   font-size: 1.75rem;
 }
 
+.slider__pagination-wrapper {
+  grid-area: page;
+  display: flex;
+  justify-content: end;
+  z-index: 1;
+  order: 2;
+}
+
+.pagination {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.pagination__marker {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 30%;
+  background-color: #5b1981;
+  transition: background-color 0.2s ease-in;
+}
+
+.pagination:hover .pagination__marker {
+  background-color: #a51b83;
+  transition: background-color 0.2s ease-in;
+}
+
 #slide1:checked ~ .slider__wrapper {
   transform: translateX(0);
 }
@@ -83,4 +116,31 @@ body {
 
 #slide4:checked ~ .slider__wrapper {
   transform: translateX(-300%);
+}
+
+#slide1:checked ~ .slider__pagination-wrapper > .page1 > .pagination__marker,
+#slide2:checked ~ .slider__pagination-wrapper > .page2 > .pagination__marker,
+#slide3:checked ~ .slider__pagination-wrapper > .page3 > .pagination__marker,
+#slide4:checked ~ .slider__pagination-wrapper > .page4 > .pagination__marker {
+  background-color: transparent;
+  border: 2px solid #c002fa67;
+}
+
+#slide1:checked
+  ~ .slider__pagination-wrapper
+  > .page1:hover
+  .pagination__marker,
+#slide2:checked
+  ~ .slider__pagination-wrapper
+  > .page2:hover
+  .pagination__marker,
+#slide3:checked
+  ~ .slider__pagination-wrapper
+  > .page3:hover
+  .pagination__marker,
+#slide4:checked
+  ~ .slider__pagination-wrapper
+  > .page4:hover
+  .pagination__marker {
+  border-color: #8305a7d3;
 }
