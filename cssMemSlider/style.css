@@ -79,7 +79,7 @@ input {
 
 .slide__pic img {
   border: 3px solid black;
-  width: 100%;
+  max-width: 100%;
   border-radius: 3%;
 }
 
@@ -168,7 +168,7 @@ input {
   border-color: #8305a7d3;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .slider {
     display: flex;
     flex-direction: column;
